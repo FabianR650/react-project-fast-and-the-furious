@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/react-project-fast-and-the-furious/static/css/main.3094ef6f.css",
+    "main.js": "/react-project-fast-and-the-furious/static/js/main.35921b15.js",
+    "static/js/453.b2e2da68.chunk.js": "/react-project-fast-and-the-furious/static/js/453.b2e2da68.chunk.js",
+    "static/media/batmobile-car-with-neon-lights.jpg": "/react-project-fast-and-the-furious/static/media/batmobile-car-with-neon-lights.2542c399a4d99424c7d8.jpg",
+    "static/media/Hotcar3.png": "/react-project-fast-and-the-furious/static/media/Hotcar3.3215cbf7e04fdb7fe514.png",
+    "static/media/NavLogo.jpeg": "/react-project-fast-and-the-furious/static/media/NavLogo.07bba0e3be29bf2eb11e.jpeg",
+    "index.html": "/react-project-fast-and-the-furious/index.html",
+    "main.3094ef6f.css.map": "/react-project-fast-and-the-furious/static/css/main.3094ef6f.css.map",
+    "main.35921b15.js.map": "/react-project-fast-and-the-furious/static/js/main.35921b15.js.map",
+    "453.b2e2da68.chunk.js.map": "/react-project-fast-and-the-furious/static/js/453.b2e2da68.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3094ef6f.css",
+    "static/js/main.35921b15.js"
+  ]
+}
