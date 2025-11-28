@@ -1,7 +1,7 @@
 
 export const movies = [
            {
-      id: 1,
+      id:         1,
       title:      "The Fast and the Furious",
       year:       2001,
       imdbId:     "tt0232500",
