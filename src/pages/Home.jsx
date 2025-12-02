@@ -1,35 +1,31 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import FastLaneLanding from "../components/FastLaneLanding";
+import FastLaneLanding from "../components/FastLaneLanding"
 
 function Home() {
-  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("");
   const navigate = useNavigate();
 
-  function handleSearch(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!search.trim()) return;
-
-    // navigate to /movies with search query
-    navigate(`/movies?search=${encodeURIComponent(search)}`);
-  }
+    if (!query.trim()) return;
+    navigate(`/movies?query=${query}`);
+  };
 
   return (
     <section id="home">
-      <h3 className="welcome-title">Welcome to Fast Lane Cars</h3>
-
-      {/* Search Form */}
-      <form onSubmit={handleSearch}>
-        <input
+      <h1 className="welcome-title">Welcome to Fast Lane Movies</h1>
+      <div className="search__results">
+      <form onSubmit={handleSubmit}>
+        <input className="search-bar"
           type="text"
           placeholder="Search movies..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="search-bar"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
         />
-        <button type="submit" className="search-bar__btn">Submit</button>
+        <button className="search-bar__btn" type="submit">Search</button>
       </form>
+      </div>
       <FastLaneLanding />
     </section>
   );

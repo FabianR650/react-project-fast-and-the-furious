@@ -1,45 +1,51 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Movie from "../components/ui/Movie";
 
-function Movies({ movies }) {
+function Movies() {
+  const [movies, setMovies] = useState([]);
   const location = useLocation();
-
-  // Read ?search=fast from the URL
-  const searchParams = new URLSearchParams(location.search);
-  const searchTerm = searchParams.get("search") || "";
   const navigate = useNavigate();
-  // Filter movies
-  const filteredMovies = movies
-    .filter(movie =>
-      movie.title.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-    .slice(0, 6); // show first 6 results
 
-    let goBack = () => {
-    navigate(-1);
-  };
+  // Make sure this matches Home.jsx
+  const queryTerm = new URLSearchParams(location.search).get("query") || "";
 
-  // ...existing code...
-return (
-  <section id="movies">
-    <h2>Search Results for: "{searchTerm}"</h2>
+  useEffect(() => {
+    async function fetchMovies() {
+    const search = queryTerm || "fast"; // default search
 
-    <div className="movie__img--wrapper">
-      {filteredMovies.length > 0
-        ? filteredMovies.map((movie) => <Movie key={movie.id} movie={movie} />)
-        : null}
-    </div>
+    const res = await fetch(
+      `https://www.omdbapi.com/?apikey=747abfb4&s=${search}`
+    );
+    const data = await res.json();
+    setMovies(data.Search || []);
+  }
 
-    {filteredMovies.length === 0 && (
-      <div>
-        <p>No movies found</p>
-        <button onClick={() => navigate(-1)} className="movie__btn">Back</button>
+  fetchMovies();
+}, [queryTerm]);
+
+  const filteredMovies = movies.slice(0, 6);
+
+  return (
+    <section id="movies">
+      <h2>Search Results for "{queryTerm}"</h2>
+
+      <div className="movie__img--wrapper">
+        {filteredMovies.map((movie) => (
+          <Link to={`/movie/${movie.imdbID}`} key={movie.imdbID}>
+            <Movie movie={movie} />
+          </Link>
+        ))}
       </div>
-    )}
-  </section>
-);
-// ...existing code...
+
+      {filteredMovies.length === 0 && (
+        <div>
+          <p className="movie__no-results" >No movies found</p>
+          <button onClick={() => navigate(-1)} className="movie__btn">Back</button>
+        </div>
+      )}
+    </section>
+  );
 }
 
 export default Movies;

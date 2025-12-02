@@ -189,6 +189,14 @@ button:active {
     border-color: #000000;
     visibility: visible;
     cursor: not-allowed;
+    pointer-events: none;
+}
+
+.search__results {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
 }
 
 .welcome-title {
@@ -210,7 +218,6 @@ button:active {
 
 .search-bar {
     align-items: center;
-    justify-content: center;
     width: 400px;   
     border-radius: 100px;
     border: 2px solid rgb(229, 231, 235);
@@ -226,7 +233,6 @@ button:active {
     overflow: hidden;
     transition: border-color 300ms;
     text-align: center;
-    display: flex;
 }
 
 .search-bar:hover {
@@ -241,13 +247,9 @@ button:active {
     background-color: orange;
     color: white;
     cursor: pointer;
-    display: flex;
     align-items: center;
-    justify-content: center;
     font-size: 16px;
-    font-weight: 600;
-    margin: 0 auto;
-    
+    font-weight: 600;    
 }
 
 .search-bar__btn:hover {
@@ -347,7 +349,7 @@ header {
 
 .header__title {
   font-size: 36px;
-  color: #110d0d;
+  color: #500150;
   margin-bottom: 16px;
   text-align: center;
   max-width: 50%;
@@ -368,6 +370,7 @@ header {
 
 .header__img {
   max-height: 100%;
+  height: 30vh;
   width: 500px;
   max-width: 100%;
   position: relative;
@@ -421,6 +424,12 @@ header {
   margin-right: 8px;
 }
 
+.movie__no-results {
+  font-size: 24px;
+  color: #242424;
+  margin: 16px 0 24px 30px;
+}
+
 .row {
   width: 100%;
   max-width: 1200px;
@@ -436,6 +445,7 @@ header {
 
 .no-cursor {
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* 
@@ -448,14 +458,13 @@ FASTLANEFEATURED
   padding-top: 8vw;
 }
 
-.movies {
-  display: flex;
+#movies {
   flex-wrap: wrap;
   margin: 0 -24px;
+
 }
 
 .movie {
-  width: 25%;
   padding: 24px;
   transition: all 300ms ease;
 }
@@ -504,11 +513,11 @@ FASTLANEFEATURED
 }
 
 .movie__img--wrapper {
-  margin-bottom: 8px;
-  border-radius: 4px;
-  overflow: hidden;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .movie__btn {
@@ -521,7 +530,7 @@ FASTLANEFEATURED
   font-weight: 600;
   cursor: pointer;
   position: relative;
-  margin-top: 16px;
+  margin: 16px 8px 6px 30px;
 }
 
 .movie__btn:hover {
@@ -551,6 +560,31 @@ FASTLANEFEATURED
   margin-bottom: 8px;
   font-size: 16px;
   font-weight: 600;
+  background-color: #140202a9;
+}
+
+.movie__imdb-rating {
+    color: orange;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #140202a9;
+}
+
+.movie__genre {
+    color: teal;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fff48ed0;
+}
+
+.movie__runtime {
+    color: purple;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #2ba11ba9;
 }
 
 .movie__ratings:hover {
@@ -594,6 +628,7 @@ footer {
   padding: 0 8px;
   color: orange;
   cursor: not-allowed;
+  pointer-events: none;
 }
 /* 
 **
@@ -689,6 +724,7 @@ select {
   max-height: 500px;
   width: auto;
   max-width: 100%;
+  margin: auto;
 }
 
 .movie__selected--description {
@@ -768,7 +804,7 @@ select {
   font-size: 32px;
 }
 .header__img {
-  max-height: 30vh;
+  max-height: 24vh;
 }
 .welcome-title {
   z-index: -1;
