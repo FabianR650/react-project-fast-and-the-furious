@@ -61,7 +61,7 @@ const Nav = () => {
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/contact" className="menu__link" onClick={closeMenu}>
+              <Link to="/contact" className="menu__link--primary" onClick={closeMenu}>
                 Contact
               </Link>
             </li>

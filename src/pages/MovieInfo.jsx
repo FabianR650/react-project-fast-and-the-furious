@@ -57,7 +57,7 @@ function MovieInfo() {
     <div id="movies__body">
       <main id="movie__main">
         <div className="movies__container">
-          <Link to="/">← Back to search</Link>
+          <Link to="/movies" className="movie__back-link">← Back to movies</Link>
 
           <div className="movie__selected">
            <img src={movieDetails.Poster} alt={movieDetails.Title} className="movie__selected--img" />
@@ -71,6 +71,8 @@ function MovieInfo() {
               <div className="movie__imdb-rating">IMDB Rating: {movieDetails.imdbRating}</div>
               <div className="movie__genre">Genre: {movieDetails.Genre}</div>
               <div className="movie__runtime">Runtime: {movieDetails.Runtime}</div>
+              <div className="movie__director">Director: {movieDetails.Director}</div>
+              <div className="movie__actors">Actors: {movieDetails.Actors}</div>
               <a
                 href={`https://www.imdb.com/title/${id}/`}
                 target="_blank"
