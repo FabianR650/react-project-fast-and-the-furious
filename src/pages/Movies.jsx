@@ -60,7 +60,7 @@ function Movies() {
 
   return (
     <section id="movies">
-      <button onClick={() => navigate(-1)} className="film__border"></button>
+      <button onClick={() => navigate("/")} className="film__border"></button>
       <h2>Search Results for "{queryTerm}"</h2>
 
       {/* SORT FORM */}
