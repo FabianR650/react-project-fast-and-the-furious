@@ -7,20 +7,6 @@ import Nav from "../src/components/Nav";
 import Footer from "../src/components/Footer";
 
 function App() {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    async function fetchMovies() {
-      const response = await fetch(
-        `https://www.omdbapi.com/?apikey=747abfb4&s=fast`
-      );
-      const data = await response.json();
-      setMovies(data.Search);
-    }
-
-    fetchMovies();
-  }, []);
-
   return (
     <Router basename="/react-project-fast-and-the-furious">
       <div>
