@@ -1,8 +1,7 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import MovieInfo from "./pages/MovieInfo";
-import { useEffect, useState } from "react";
 import Nav from "../src/components/Nav";
 import Footer from "../src/components/Footer";
 
