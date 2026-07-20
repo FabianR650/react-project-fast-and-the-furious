@@ -1,5 +1,4 @@
-import React from 'react'; 
-import { Link } from "react-router-dom";
+import React from 'react';
 import Hotcar3 from "../assets/Hotcar3.png";
 
 
