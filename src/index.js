@@ -20,11 +20,9 @@ library.add(
   faStarHalfAlt,
   faSpinner,
   faArrowLeft,
-  faShoppingCart,
-  faCar
+  faShoppingCart
 );
 
-const element = <FontAwesomeIcon icon={faCar} />
 
 const root = ReactDOM.createRoot(document.getElementById('root')); // <-- new API
 root.render(
