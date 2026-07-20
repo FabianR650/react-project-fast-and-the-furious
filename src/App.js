@@ -7,16 +7,16 @@ import Footer from "../src/components/Footer";
 
 function App() {
   return (
-    <Router basename="/react-project-fast-and-the-furious">
+    <Router>
       <div>
-      <Nav />
-     <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movie/:id" element={<MovieInfo />} />
-    </Routes>
-      <Footer />
-    </div>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movie/:id" element={<MovieInfo />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 }
